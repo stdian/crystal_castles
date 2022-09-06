@@ -8,7 +8,7 @@
 $parallax-offset: 30vh;
 $content-offset: 64px;
 $transition-speed: 1.2s;
-$slide-number: 10;
+$slide-number: 11;
 
 $bg-color: #19191B;
 
@@ -107,6 +107,13 @@ body {
 	}
 	&:nth-child(10) {
 		background-image: url("../img/block-4/6.png");
+	}
+	&:nth-child(11) {
+		background-color: #2A2A2D;
+		background-image: url("../img/block-5/lines.svg"), url("../img/block-5/circle1.svg"), url("../img/block-5/circle2.svg");
+		background-position: 11vw 3vh, calc(100% + 74vw) -66vh, 0 -10vh;
+		background-size: 188vh 112vh, 235vh 235vh, 235vh 235vh;
+		background-repeat: no-repeat;
 	}
 }
 
@@ -207,4 +214,25 @@ body {
 
 .btn-large {
 	padding: 1.65vh 1.11vw .59vh;
+}
+
+.small-sign {
+	display: flex;
+	align-items: center;
+	column-gap: 1.11vh;
+
+	hr {
+		width: 1px;
+		height: 2.12vh;
+		border: none;
+		background-color: #FFFFFF;
+	}
+
+	span {
+		font-style: normal;
+		font-weight: 350;
+		font-size: 1.88vh;
+		color: #FFFFFF;
+		letter-spacing: -.02em;
+	}
 }

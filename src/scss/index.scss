@@ -42,27 +42,6 @@
 	padding-top: 7.53vh;
 	padding-left: 5.55vw;
 
-	.small-sign {
-		display: flex;
-		align-items: center;
-		column-gap: 1.11vh;
-
-		hr {
-			width: 1px;
-			height: 2.12vh;
-			border: none;
-			background-color: #FFFFFF;
-		}
-
-		span {
-			font-style: normal;
-			font-weight: 350;
-			font-size: 1.88vh;
-			color: #FFFFFF;
-			letter-spacing: -.02em;
-		}
-	}
-
 	h1 {
 		width: fit-content;
 		padding-top: 3.76vh;
@@ -202,27 +181,6 @@
 		padding-top: 7.53vh;
 		padding-left: 5.55vw;
 
-		.small-sign {
-			display: flex;
-			align-items: center;
-			column-gap: 1.11vh;
-	
-			hr {
-				width: 1px;
-				height: 2.12vh;
-				border: none;
-				background-color: #FFFFFF;
-			}
-	
-			span {
-				font-style: normal;
-				font-weight: 350;
-				font-size: 1.88vh;
-				color: #FFFFFF;
-				letter-spacing: -.02em;
-			}
-		}
-
 		.dots {
 			display: flex;
 			flex-direction: column;
@@ -260,6 +218,83 @@
 					font-size: 1.65vh;
 					letter-spacing: -.02em;
 				}
+			}
+		}
+	}
+}
+
+#block-5 {
+	.wrapper {
+		padding-top: 7.53vh;
+		padding-left: 5.55vw;
+
+		.container {
+			display: flex;
+			justify-content: space-between;
+
+			.left {
+				h1 {
+					padding-top: 3.76vh;
+					padding-bottom: 1.88vh;
+					font-style: normal;
+					font-weight: 350;
+					font-size: 7.53vh;
+					line-height: 100%;
+					letter-spacing: -.02em;
+					text-align: left;
+				}
+
+				p {
+					padding-bottom: 7.53vh;
+					font-style: normal;
+					font-weight: 350;
+					font-size: 2.82vh;
+					line-height: 120%;
+					letter-spacing: -.02em;
+					color: #959595;
+					text-align: left;
+				}
+
+				.blocks {
+					display: flex;
+					column-gap: 1.88vh;
+
+					.block {
+						display: flex;
+						flex-direction: column;
+						min-width: 12.94vh;
+						padding: 1.88vh;
+						border-radius: 16px;
+						background: #34333C;
+						
+						
+						.large {
+							color: #959595;
+							font-style: normal;
+							font-weight: 350;
+							font-size: 5.65vh;
+							line-height: 120%;
+							text-align: center;
+							letter-spacing: -.02em;
+						}
+
+						.small {
+							color: #959595;
+							font-style: normal;
+							font-weight: 350;
+							font-size: 1.88vh;
+							line-height: 120%;
+							text-align: center;
+							letter-spacing: -.02em;
+							
+						}
+					}
+				}
+			}
+
+			img {
+				margin-top: 5.5vh;
+				margin-right: 7.7vw;
 			}
 		}
 	}
