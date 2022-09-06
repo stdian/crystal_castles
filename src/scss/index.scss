@@ -38,3 +38,85 @@
 		}
 	}
 }
+
+#block-2 {
+	padding-top: 7.53vh;
+	padding-left: 5.55vw;
+
+	.small-sign {
+		display: flex;
+		align-items: center;
+		column-gap: 1.11vh;
+
+		hr {
+			width: 1px;
+			height: 2.12vh;
+		}
+
+		span {
+			font-style: normal;
+			font-weight: 350;
+			font-size: 1.88vh;
+			color: #FFFFFF;
+			letter-spacing: -.02em;
+		}
+	}
+
+	h1 {
+		width: fit-content;
+		padding-top: 3.76vh;
+		font-style: normal;
+		font-weight: 350;
+		font-size: 7.53vh;
+		line-height: 100%;
+		letter-spacing: -.02em;
+		color: #FFFFFF;
+		text-align: left;
+	}
+
+	p {
+		width: fit-content;
+		padding-left: 20.14vw;
+		font-style: normal;
+		font-weight: 350;
+		font-size: 2.82vh;
+		line-height: 120%;
+		letter-spacing: .02em;
+		color: #D9D9D9;
+		text-align: left;
+	}
+
+	.point {
+		position: absolute;
+		top: 74vh;
+		right: 31vw;
+		display: flex;
+		align-items: center;
+		column-gap: 2.2vw;
+
+		span {
+			font-style: normal;
+			font-weight: 350;
+			font-size: 16px;
+			letter-spacing: -.02em;
+			color: #D9D9D9;
+		}
+
+		.line {
+			display: flex;
+			align-items: center;
+
+			hr {
+				width: 23.54vw;
+				height: 1px;
+			}
+
+			.circle {
+				width: 6px;
+				height: 6px;
+				border-radius: 10px;
+				background: #FFFFFF;
+			}
+		}
+	}
+}
