@@ -8,7 +8,7 @@
 $parallax-offset: 30vh;
 $content-offset: 64px;
 $transition-speed: 1.2s;
-$slide-number: 3;
+$slide-number: 4;
 
 $bg-color: #19191B;
 
@@ -85,7 +85,7 @@ body {
 		background-repeat: no-repeat;
 	}
 	&:nth-child(3) {
-		background-image: url("https://i.postimg.cc/TY0xQ41T/photo-1433840496881-cbd845929862.jpg");
+		background-color: $bg-color;
 	}
 }
 
