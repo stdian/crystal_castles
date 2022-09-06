@@ -1,0 +1,40 @@
+header {
+	position: fixed;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100vw;
+	height: 7.5vh;
+	padding: 0 9.4vh;
+	background-color: #19191B;
+
+	a {
+		img {
+			height: 3.76vh;
+		}
+	}
+
+	nav {
+		ul {
+			display: flex;
+			list-style-type: none;
+			column-gap: 2.22vw;
+
+			li {
+				a {
+					font-style: normal;
+					font-weight: 500;
+					font-size: 1.88vh;
+					line-height: 124%;
+					color: #D9D9D9;
+					text-decoration: none;
+
+					&:visited {
+						color: #D9D9D9;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,40 @@
+@import "global";
+@import "header";
+
+
+#block-1 {
+	.wrapper {
+		width: fit-content;
+		margin-top: 17vh;
+		margin-left: 23.6vw;
+
+		img {
+			margin-bottom: 3.76vh;
+		}
+
+		p {
+			padding-bottom: 5.88vh;
+			font-style: normal;
+			font-weight: 350;
+			font-size: 2.82vh;
+			line-height: 120%;
+			color: #D9D9D9;
+			text-align: center;
+			letter-spacing: -.02em;
+		}
+
+		.buttons {
+			display: flex;
+			justify-content: center;
+			column-gap: 8px;
+
+			.btn-white {
+				padding: 2vh 3.6vw 1.8vh;
+			}
+
+			.btn-transparent {
+				padding: 2vh 3.2vw 1.8vh;
+			}
+		}
+	}
+}
