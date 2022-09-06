@@ -8,7 +8,7 @@
 $parallax-offset: 30vh;
 $content-offset: 64px;
 $transition-speed: 1.2s;
-$slide-number: 4;
+$slide-number: 10;
 
 $bg-color: #19191B;
 
@@ -86,6 +86,27 @@ body {
 	}
 	&:nth-child(3) {
 		background-color: $bg-color;
+	}
+	&:nth-child(4) {
+		background-color: $bg-color;
+	}
+	&:nth-child(5) {
+		background-image: url("../img/block-4/1.png");
+	}
+	&:nth-child(6) {
+		background-image: url("../img/block-4/2.png");
+	}
+	&:nth-child(7) {
+		background-image: url("../img/block-4/3.png");
+	}
+	&:nth-child(8) {
+		background-image: url("../img/block-4/4.png");
+	}
+	&:nth-child(9) {
+		background-image: url("../img/block-4/5.png");
+	}
+	&:nth-child(10) {
+		background-image: url("../img/block-4/6.png");
 	}
 }
 
