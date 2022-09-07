@@ -23,7 +23,6 @@ window.onload = () => {
 }
 
 let ticking = false
-const isFirefox = /Firefox/i.test(navigator.userAgent)
 const scrollSensitivitySetting = 30
 const slideDurationSetting = 600
 const mousewheelEvent = "wheel"
