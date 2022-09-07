@@ -8,7 +8,7 @@
 $parallax-offset: 30vh;
 $content-offset: 64px;
 $transition-speed: 1.2s;
-$slide-number: 11;
+$slide-number: 13;
 
 $bg-color: #19191B;
 
@@ -115,6 +115,16 @@ body {
 		background-size: 188vh 112vh, 235vh 235vh, 235vh 235vh;
 		background-repeat: no-repeat;
 	}
+	&:nth-child(12) {
+		background-color: #242629;
+		background-image: url("../img/block-6/circle.svg"), url("../img/block-6/level.svg"), url("../img/block-6/point.svg"), url("../img/block-6/cards.png");
+		background-position: -50vw -20vh, -44vw 53vh, 40% 55%, 75vw 84vh;
+		background-size: 235vh 235vh, 228vh 73vh, 30vh 30vh, 49vh 42.23vh;
+		background-repeat: no-repeat;
+	}
+	&:nth-child(13) {
+		background-color: $bg-color;
+	}
 }
 
 .content {
@@ -157,6 +167,12 @@ body {
 			transform: translateY($parallax-offset / 2);
 		}
 	}
+	
+}
+
+.block-6-bg.down-scroll {
+	/* stylelint-disable-next-line declaration-no-important */
+	transform: translate3d(0, -91.5vh, 0) !important;
 }
 
 .btn {

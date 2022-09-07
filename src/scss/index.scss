@@ -293,8 +293,158 @@
 			}
 
 			img {
+				height: 81.5vh;
 				margin-top: 5.5vh;
 				margin-right: 7.7vw;
+			}
+		}
+	}
+}
+
+#block-6 {
+	.wrapper {
+		padding-top: 7.53vh;
+		padding-left: 5.55vw;
+		padding-right: 5.55vw;
+
+		.container {
+			display: flex;
+			justify-content: space-between;
+
+			.left {
+				h1 {
+					padding-top: 3.76vh;
+					color: #FFFFFF;
+					font-style: normal;
+					font-weight: 350;
+					font-size: 7.53vh;
+					line-height: 95%;
+					letter-spacing: -.02em;
+					text-align: left;
+				}
+			}
+
+			img {
+				margin-top: 8.5vh;
+			}
+		}
+	}
+}
+
+.block-footer {
+	/* stylelint-disable-next-line declaration-no-important */
+	transform: translate3d(0, -37vh, 0) !important;
+	
+	.content-wrapper {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 54.476vh;
+		/* stylelint-disable-next-line declaration-no-important */
+		transform: translateY(0) !important;
+    
+		.email {
+			display: flex;
+			justify-content: space-between;
+			padding: 9.41vh 22.35vh 10.23vh 9.41vh;
+			border-radius: 32px;
+			background: #FEC6FF;
+	
+			.left {
+				h1 {
+					color: #000000;
+					font-style: normal;
+					font-weight: 350;
+					font-size: 7.53vh;
+					line-height: 95%;
+					letter-spacing: -.02em;
+					text-align: left;
+				}
+
+
+			}
+
+			.right {
+				width: 35.49vw;
+
+				h2 {
+					padding-bottom: 5.41vh;
+					color: #000000;
+					font-style: normal;
+					font-weight: 350;
+					font-size: 2.82vh;
+					line-height: 120%;
+					letter-spacing: -.02em;
+					text-align: left;
+				}
+
+				form {
+					display: flex;
+					justify-content: space-between;
+
+					input {
+						width: 22.78vw;
+						padding: 2.35vh 1.3vh;
+						border: none;
+						border-radius: 12px;
+						
+
+						color: #242424;
+						font-style: normal;
+						font-weight: 400;
+						font-size: 1.647vh;
+						line-height: 120%;
+						letter-spacing: -.02em;
+
+						&:focus {
+							outline: none;
+						}
+					}
+
+					button {
+						width: calc(calc(35.49vw - 22.78vw) - .556vw);
+						padding-top: 2vh;
+						padding-bottom: 1.8vh;
+						border: none;
+						border-radius: 12px;
+						background: #000000;
+						cursor: pointer;
+					}
+				}
+
+				p {
+					padding-top: 1.88vh;
+					color: #000000;
+					font-style: normal;
+					font-weight: 350;
+					font-size: 16px;
+					line-height: 120%;
+					letter-spacing: -.02em;
+					text-align: left;
+				}
+			}
+		}
+
+		.copyright {
+			display: flex;
+			justify-content: space-between;
+			padding: 1.82vh 5.55vw;
+
+			.copy {
+				color: #959595;
+				font-style: normal;
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 124%;
+			}
+
+			.policy {
+				color: #959595;
+				font-style: normal;
+				font-weight: 700;
+				font-size: 16px;
+				line-height: 124%;
+				text-decoration: none;
 			}
 		}
 	}
