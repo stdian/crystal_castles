@@ -35,12 +35,16 @@
 .header-mobile {
 	position: fixed;
 	z-index: 100;
-	display: flex;
+	display: none;
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
 	padding: 2.46vh 5.53vw;
 	background: $bg-color;
+
+	@media screen and (max-width: $mobile){
+		display: flex;
+	}
 	
 	ul {
 		display: flex;

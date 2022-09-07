@@ -4,14 +4,15 @@ import "../scss/index.scss"
 
 let ticking = false
 const isFirefox = /Firefox/i.test(navigator.userAgent)
-// eslint-disable-next-line no-useless-escape
-const isIe = /MSIE/i.test(navigator.userAgent) || /Trident.*rv\:11\./i.test(navigator.userAgent)
 const scrollSensitivitySetting = 30
 const slideDurationSetting = 600
-const mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel"
+const mousewheelEvent = "wheel"
 let currentSlideNumber = 0
 // eslint-disable-next-line no-undef
 const totalSlideNumber = $(".background").length
+
+let block3state = 0
+let block4state = 0
 
 const nextItem = () => {
 	// eslint-disable-next-line no-undef
@@ -31,14 +32,84 @@ function slideDurationTimeout(slideDuration) {
 	}, slideDuration)
 }
 
+const dogChange = (state) => {
+	const block = document.getElementById("block-3-1")
+	block3state = state
+	if (block3state === 0) {
+		block.getElementsByClassName("top")[0].classList.remove("changed")
+		block.getElementsByClassName("bottom")[0].classList.remove("changed")
+		block.getElementsByClassName("img")[0].classList.remove("changed")
+	}
+	if (block3state === 1) {
+		block.getElementsByClassName("top")[0].classList.add("changed")
+		block.getElementsByClassName("bottom")[0].classList.add("changed")
+		block.getElementsByClassName("img")[0].classList.add("changed")
+	}
+}
+
+const block4change = (direction, e) => {
+	if (block4state === 0 && direction === 0) {
+		return false
+	}
+	if (block4state === 5 && direction === 1) {
+		return false
+	}
+
+	if (direction === 0) block4state -= 1
+	if (direction === 1) block4state += 1
+
+	let bgIndex = 0
+	for (let i = 0; i < e.path.length; i += 1) {
+		if (e.path[i].classList.contains("background")) {
+			bgIndex = i
+			break
+		}
+	}
+
+	const bg = e.path[bgIndex]
+	const dots = e.path[bgIndex].getElementsByClassName("dots")[0].getElementsByClassName("dot")
+	for (let i = 0; i < dots.length; i += 1) {
+		dots[i].classList.remove("active")
+	}
+
+	dots[block4state].classList.add("active")
+
+	bg.style.backgroundImage = `url(/img/block-4/${block4state + 1}..png)`
+
+	return true
+}
+
 function parallaxScroll(evt) {
-	let delta
-	if (isFirefox) {
-		delta = evt.detail * -120
-	} else if (isIe) {
-		delta = -evt.deltaY
-	} else {
-		delta = evt.wheelDelta
+	const delta = evt.wheelDelta
+
+	let isBlock3 = false
+	let isBlock4 = false
+
+	for (let i = 0; i < evt.path.length; i += 1) {
+		if (evt.path[i].id === "block-3-1") {
+			isBlock3 = true
+			break
+		}
+
+		if (evt.path[i].id === "block-4-1") {
+			isBlock4 = true
+			break
+		}
+	}
+
+	if (isBlock4) {
+		const direction = evt.wheelDeltaY < 0 ? 1 : 0
+		if (block4change(direction, evt)) return
+	}
+
+	if (isBlock3 && evt.wheelDeltaY < 0 && block3state === 0) {
+		dogChange(1)
+		return
+	}
+
+	if (isBlock3 && evt.wheelDeltaY > 0 && block3state === 1) {
+		dogChange(0)
+		return
 	}
 
 	if (ticking !== true) {

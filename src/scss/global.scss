@@ -8,7 +8,7 @@
 $parallax-offset: 30vh;
 $content-offset: 64px;
 $transition-speed: 1.2s;
-$slide-number: 13;
+$slide-number: 8;
 
 $bg-color: #19191B;
 $mobile: 768px;
@@ -102,41 +102,24 @@ body {
 		background-color: $bg-color;
 	}
 	&:nth-child(4) {
-		background-color: $bg-color;
+		background-image: url("../img/block-4/1.png");
+		transition: all .8s ease;
 	}
 	&:nth-child(5) {
-		background-image: url("../img/block-4/1.png");
-	}
-	&:nth-child(6) {
-		background-image: url("../img/block-4/2.png");
-	}
-	&:nth-child(7) {
-		background-image: url("../img/block-4/3.png");
-	}
-	&:nth-child(8) {
-		background-image: url("../img/block-4/4.png");
-	}
-	&:nth-child(9) {
-		background-image: url("../img/block-4/5.png");
-	}
-	&:nth-child(10) {
-		background-image: url("../img/block-4/6.png");
-	}
-	&:nth-child(11) {
 		background-color: #2A2A2D;
 		background-image: url("../img/block-5/lines.svg"), url("../img/block-5/circle1.svg"), url("../img/block-5/circle2.svg");
 		background-position: 11vw 3vh, calc(100% + 74vw) -66vh, 0 -10vh;
 		background-size: 188vh 112vh, 235vh 235vh, 235vh 235vh;
 		background-repeat: no-repeat;
 	}
-	&:nth-child(12) {
+	&:nth-child(6) {
 		background-color: #242629;
 		background-image: url("../img/block-6/circle.svg"), url("../img/block-6/level.svg"), url("../img/block-6/point.svg"), url("../img/block-6/cards.png");
 		background-position: -50vw -20vh, -39vw 60vh, 40% 55%, 75vw 84vh;
 		background-size: 235vh 235vh, 228vh 73vh, 30vh 30vh, 49vh 42.23vh;
 		background-repeat: no-repeat;
 	}
-	&:nth-child(13) {
+	&:nth-child(7) {
 		background-color: $bg-color;
 	}
 }
