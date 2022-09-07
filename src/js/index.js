@@ -10,7 +10,6 @@ window.onload = () => {
 	document.getElementsByTagName("header")[0].classList.remove("notready")
 	const fadeTarget = document.getElementsByClassName("preloader")[0]
 	const fadeEffect = setInterval(() => {
-		console.log(fadeTarget.style.opacity)
 		if (fadeTarget.style.opacity > 0) {
 			fadeTarget.style.opacity -= 0.05
 		} else {
@@ -76,28 +75,33 @@ const block4change = (direction, e) => {
 		return false
 	}
 
-	if (direction === 0) block4state -= 1
-	if (direction === 1) block4state += 1
+	if (!ticking) {
+		ticking = true
+		if (direction === 0) block4state -= 1
+		if (direction === 1) block4state += 1
 
-	let bgIndex = 0
-	for (let i = 0; i < e.path.length; i += 1) {
-		if (e.path[i].classList.contains("background")) {
-			bgIndex = i
-			break
+		let bgIndex = 0
+		for (let i = 0; i < e.path.length; i += 1) {
+			if (e.path[i].classList.contains("background")) {
+				bgIndex = i
+				break
+			}
 		}
+
+		const bg = e.path[bgIndex]
+		const dots = e.path[bgIndex].getElementsByClassName("dots")[0].getElementsByClassName("dot")
+		for (let i = 0; i < dots.length; i += 1) {
+			dots[i].classList.remove("active")
+		}
+
+		dots[block4state].classList.add("active")
+
+		bg.style.backgroundImage = `url(${document.getElementById(`loader${block4state + 1}`).src})`
+		slideDurationTimeout(slideDurationSetting)
+		return true
 	}
 
-	const bg = e.path[bgIndex]
-	const dots = e.path[bgIndex].getElementsByClassName("dots")[0].getElementsByClassName("dot")
-	for (let i = 0; i < dots.length; i += 1) {
-		dots[i].classList.remove("active")
-	}
-
-	dots[block4state].classList.add("active")
-
-	bg.style.backgroundImage = `url(/img/block-4/${block4state + 1}..png)`
-
-	return true
+	return false
 }
 
 function parallaxScroll(evt) {
@@ -133,7 +137,7 @@ function parallaxScroll(evt) {
 		return
 	}
 
-	if (ticking !== true) {
+	if (!ticking) {
 		if (delta <= -scrollSensitivitySetting) {
 			ticking = true
 			if (currentSlideNumber !== totalSlideNumber - 1) {
