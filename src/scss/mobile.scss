@@ -312,5 +312,120 @@
 			
 		}
 	}
+
+	.block-6-mobile {
+		width: 100%;
+		height: 181vh;
+		padding: 3.6vh 4.26vw 0;
+		border-radius: 16px;
+
+		background-color: #242629;
+		background-image: url("../img/block-6/circle.svg"), url("../img/block-6/level.svg"), url("../img/block-6/point.svg"), url("../img/block-6/cards.png");
+		background-position: -220vw -34vh, -116vw 81vh, 55vw 21vh, -14vw 143vh;
+		background-size: 235vh 235vh, 228vh 73vh, 30vh 30vh, 130vw 112vw;
+		background-repeat: no-repeat;
+
+		h1 {
+			padding-top: 3.7vh;
+			padding-bottom: 4.7vh;
+			font-style: normal;
+			font-weight: 350;
+			font-size: 5.9vh;
+			line-height: 100%;
+			letter-spacing: -.02em;
+			color: #FFFFFF;
+		}
+	}
+
+	.block-email-mobile {
+		padding: 3.6vh 4.26vw;
+		border-radius: 16px;
+		background: #FEC6FF;
+
+		h1 {
+			padding-bottom: 2.4vh;
+			color: #000000;
+			font-style: normal;
+			font-weight: 350;
+			font-size: 7.2vh;
+			line-height: 100%;
+			letter-spacing: -.02em;
+		}
+
+		h2 {
+			padding-bottom: 4.8vh;
+			color: #000000;
+			font-style: normal;
+			font-weight: 350;
+			font-size: 20px;
+			line-height: 120%;
+			letter-spacing: -.02em;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			width: 91.4vw;
+
+			input {
+				margin-bottom: 1.2vh;
+				padding: 3vh 4.26vw;
+				border: none;
+				border-radius: 12px;
+				color: #242424;
+				font-style: normal;
+				font-weight: 400;
+				font-size: 2vh;
+				line-height: 120%;
+				letter-spacing: -.02em;
+				
+				&:focus {
+					outline: none;
+				}
+			}
+
+			button {
+				height: 8.5vh;
+				margin-bottom: 2.4vh;
+				border: none;
+				border-radius: 12px;
+				background: #000000;
+				cursor: pointer;
+			}
+		}
+
+		p {
+			color: #000000;
+			font-style: normal;
+			font-weight: 350;
+			font-size: 2.4vh;
+			line-height: 120%;
+			letter-spacing: -.02em;
+
+		}
+	}
+
+	.block-copyright-mobile {
+		padding: 3.6vh 0;
+		text-align: center;
+
+		.copy {
+			padding-top: 2.4vh;
+			color: #959595;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 2.4vh;
+			line-height: 124%;
+		}
+
+		.policy {
+			color: #959595;
+			font-style: normal;
+			font-weight: 700;
+			font-size: 2.4vh;
+			line-height: 124%;
+			text-decoration: none;
+		}
+	}
 }
 
