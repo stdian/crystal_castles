@@ -35,20 +35,6 @@
 				}
 			}
 		}
-
-		// .cont {
-		// 	width: 26%;
-
-		// 	#logo-mobile {
-		// 		height: 3.6vh;
-		// 	}
-	
-		// 	a {
-		// 		img {
-		// 			height: 4.84vh;
-		// 		}
-		// 	}
-		// }
 	}
 
 	.block-1-mobile {
@@ -153,6 +139,96 @@
 	.block-3-mobile-img {
 		img {
 			width: 100vw;
+		}
+	}
+
+	.block-4-mobile {
+		width: 100%;
+		height: 90.70vh;
+		border-radius: 16px;
+
+		.swiper-wrapper {
+			.swiper-slide {
+				padding: 3.6vh 4.26vw;
+				background-color: $bg-color;
+				background-position: center;
+				background-size: cover;
+				background-repeat: no-repeat;
+
+				.dots-container {
+					position: absolute;
+					bottom: 4.8vh;
+					width: calc(100% - 8.52vw);
+
+					.dots {
+						
+						display: flex;
+						flex-direction: column;
+						row-gap: 2vh;
+						width: fit-content;
+						margin: 0 auto;
+						transform: rotate(-90deg);
+			
+						.dot {
+							display: flex;
+							align-items: center;
+							column-gap: .6vh;
+			
+							.circle {
+								width: 1.2vh;
+								height: 1.2vh;
+								border-radius: 10px;
+								background: #D9D9D9;
+								opacity: .4;
+			
+								&.active {
+									background: #FFFFFF;
+									opacity: 1;
+								}
+							}
+			
+							hr {
+								width: 3.5vh;
+								height: 1px;
+								border: none;
+								background-color: #FFFFFF;
+							}
+			
+							span {
+								color: #FFFFFF;
+								font-style: normal;
+								font-weight: 350;
+								font-size: 2.1vh;
+								letter-spacing: -.02em;
+							}
+						}
+					}
+				}
+
+				&:first-child {
+					background-image: url("../img/block-4/m1.png");
+				}
+
+				&:nth-child(2) {
+					background-image: url("../img/block-4/m2.png");
+				}
+
+				&:nth-child(3) {
+					background-image: url("../img/block-4/m3.png");
+				}
+
+				&:nth-child(4) {
+					background-image: url("../img/block-4/m4.png");
+				}
+
+				&:nth-child(5) {
+					background-image: url("../img/block-4/m5.png");
+				}
+
+				&:nth-child(6) {
+					background-image: url("../img/block-4/m6.png");
+				}
+			}
 		}
 	}
 }

@@ -85,3 +85,6 @@ window.scrollToSlide = (slide) => {
 		slideDurationTimeout(slideDurationSetting)
 	}
 }
+
+// eslint-disable-next-line no-undef, no-unused-vars
+const swiper = new Swiper(".block-4-mobile", {})
