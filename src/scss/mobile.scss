@@ -1,0 +1,159 @@
+#mobile-menu {
+	display: none;
+}
+
+.mobile {
+	display: none;
+
+	@media screen and (max-width: $mobile) {
+		display: block;
+	}
+
+	.header-mobile {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 2.46vh 5.53vw;
+		
+		ul {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+
+			li {
+				display: inline;
+				width: 33%;
+
+				.btn {
+					float: right;
+				}
+
+				#header-logo {
+					display: block;
+					margin: 0 auto;
+				}
+			}
+		}
+
+		// .cont {
+		// 	width: 26%;
+
+		// 	#logo-mobile {
+		// 		height: 3.6vh;
+		// 	}
+	
+		// 	a {
+		// 		img {
+		// 			height: 4.84vh;
+		// 		}
+		// 	}
+		// }
+	}
+
+	.block-1-mobile {
+		height: 111vh;
+		border-radius: 16px;
+		background-color: #4A50DC;
+		background-image: url("../img/block-1/image1.png"), url("../img/block-1/image2.png"), url("../img/block-1/wave-mobile.svg"), url("../img/block-1/ellipse-mobile.svg");
+		background-position: -46.4vw 70vh, calc(100% + 60vw) calc(100% - 10vh), center 100%, -50vw 30vh;
+		background-size: 38vh 38vh, 48.7vh 40.5vh, 114vw 22.5vw, 73vw 53.6vh;
+		background-repeat: no-repeat;
+
+		img {
+			display: block;
+			width: calc(100% - 8.6vw);
+			margin: 0 auto;
+			margin-bottom: 4.8vh;
+			padding-top: 11.2vh;
+		}
+
+		p {
+			padding-bottom: 9.6vh;
+			color: #FFFFFF;
+			font-weight: 350;
+			font-size: 3.2vh;
+			line-height: 120%;
+			letter-spacing: -.02em;
+			text-align: center;
+		}
+
+		.buttons {
+			display: flex;
+			justify-content: space-between;
+			padding: 0 4.27vw;
+
+			.btn {
+				width: 44.5vw;
+			}
+			
+		}
+	}
+
+	.block-2-mobile {
+		height: 114vh;
+		padding: 3.6vh 4.26vw;
+		border-radius: 16px;
+		background: linear-gradient(241.99deg, #48637F 0%, #465F7B 66.34%);
+
+		h1 {
+			padding-top: 3.7vh;
+			padding-bottom: 2.6vh;
+			font-style: normal;
+			font-weight: 350;
+			font-size: 5.9vh;
+			line-height: 100%;
+			letter-spacing: -.02em;
+			color: #FFFFFF;
+		}
+
+		p {
+			padding-bottom: 4.9vh;
+			font-style: normal;
+			font-weight: 350;
+			font-size: 3vh;
+			line-height: 120%;
+			letter-spacing: -.02em;
+			color: #D9D9D9;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			margin: 0 auto;
+		}
+	}
+
+	.block-3-mobile-text {
+		padding: 3.6vh 4.26vw;
+		border-radius: 16px;
+		background-color: #FEC6FF;
+		
+		h1 {
+			padding-bottom: 1.2vh;
+			font-style: normal;
+			font-weight: 350;
+			font-size: 6vh;
+			line-height: 120%;
+			letter-spacing: -.02em;
+			color: #000000;
+		}
+
+		p {
+			padding-bottom: 2.4vh;
+			font-style: normal;
+			font-weight: 350;
+			font-size: 3vh;
+			line-height: 120%;
+			letter-spacing: -.02em;
+			color: #000000;
+		}
+	}
+
+	.block-3-mobile-img {
+		img {
+			width: 100vw;
+		}
+	}
+}
+

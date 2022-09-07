@@ -11,6 +11,7 @@ $transition-speed: 1.2s;
 $slide-number: 13;
 
 $bg-color: #19191B;
+$mobile: 768px;
 
 * {
 	font-family: "Favorit Pro", sans-serif;
@@ -31,7 +32,16 @@ html, body {
 body {
 	overflow: hidden;
 	background-color: $bg-color;
+
+	@media screen and (max-width: $mobile) {
+		overflow: initial;
+		header, & > .container {
+			display: none;
+		}
+	}
 }
+
+
 
 @for $i from 1 to ($slide-number + 1) {
 	.background:nth-child(#{$i}) {
@@ -54,6 +64,10 @@ body {
 	transform: translateY($parallax-offset);
 	@include transition($transition-speed, all, cubic-bezier(.22, .44, 0, 1));
 
+	@media screen and (max-width: $mobile) {
+		overflow: scroll;
+	}
+
 	&:before {
 		content: "";
 		position: absolute;
@@ -67,7 +81,7 @@ body {
 
 	&:first-child {
 		background-color: #4A50DC;
-		background-image: url("../img/block-1/image1.png"), url("../img/block-1/image2.png"), url("../img/block-1/wave.svg"), url("../img/block-1/circle.svg"), url("../img/block-1/circle.svg");
+		background-image: url("../img/block-1/image1.png"), url("../img/block-1/image2.png"), url("../img/block-1/wave.svg"), url("../img/block-1/ellipse.svg"), url("../img/block-1/circle.svg");
 		background-position: -19.4vw 45.88vh, calc(100% + 15vw) calc(100% - 33vh), center calc(100% - 22.3vh), -16.6vw -100px, calc(100% + 20.83vw) calc(100% - 17.64vh), 0 0;
 		background-size: 79vh 79vh, 97.7vh 82.5vh, 110vw 20.84vw, 73vh 53.6vh, 54vh 54vh;
 		background-repeat: no-repeat;
@@ -118,7 +132,7 @@ body {
 	&:nth-child(12) {
 		background-color: #242629;
 		background-image: url("../img/block-6/circle.svg"), url("../img/block-6/level.svg"), url("../img/block-6/point.svg"), url("../img/block-6/cards.png");
-		background-position: -50vw -20vh, -44vw 53vh, 40% 55%, 75vw 84vh;
+		background-position: -50vw -20vh, -39vw 60vh, 40% 55%, 75vw 84vh;
 		background-size: 235vh 235vh, 228vh 73vh, 30vh 30vh, 49vh 42.23vh;
 		background-repeat: no-repeat;
 	}
@@ -183,6 +197,10 @@ body {
 	line-height: 124%;
 	text-align: center;
 	text-decoration: none;
+
+	@media screen and (max-width: $mobile) {
+		font-size: 2.12vh;
+	}
 }
 
 .btn-white {
@@ -226,10 +244,18 @@ body {
 
 .btn-small {
 	padding: 1.17vh 1vw .82vh;
+
+	@media screen and (max-width: $mobile) {
+		padding: 1.51vh 4.3vw;
+	}
 }
 
 .btn-large {
 	padding: 1.65vh 1.11vw .59vh;
+
+	@media screen and (max-width: $mobile) {
+		padding: 2.4vh 2.4vh 2vh;
+	}
 }
 
 .small-sign {
@@ -237,11 +263,19 @@ body {
 	align-items: center;
 	column-gap: 1.11vh;
 
+	@media screen and (max-width: $mobile) {
+		column-gap: 4.2vw;
+	}
+
 	hr {
 		width: 1px;
 		height: 2.12vh;
 		border: none;
 		background-color: #FFFFFF;
+
+		@media screen and (max-width: $mobile) {
+			height: 2.7vh;
+		}
 	}
 
 	span {
@@ -250,5 +284,9 @@ body {
 		font-size: 1.88vh;
 		color: #FFFFFF;
 		letter-spacing: -.02em;
+		
+		@media screen and (max-width: $mobile) {
+			font-size: 2.4vh;
+		}
 	}
 }
