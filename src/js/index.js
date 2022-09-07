@@ -88,3 +88,23 @@ window.scrollToSlide = (slide) => {
 
 // eslint-disable-next-line no-undef, no-unused-vars
 const swiper = new Swiper(".block-4-mobile", {})
+
+window.showMobileMenu = () => {
+	const content = document.querySelector(".mobile")
+	const menu = document.querySelector("#mobile-menu")
+	const header = document.querySelector(".header-mobile")
+
+	content.style.display = "none"
+	menu.style.display = "block"
+	header.style.display = "none"
+}
+
+window.hideMobileMenu = () => {
+	const content = document.querySelector(".mobile")
+	const menu = document.querySelector("#mobile-menu")
+	const header = document.querySelector(".header-mobile")
+
+	content.style.display = "block"
+	menu.style.display = "none"
+	header.style.display = "flex"
+}

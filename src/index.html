@@ -355,16 +355,25 @@
 			</section>
 		</div>
 		<div id="mobile-menu">
-
+			<img src="./img/mobile/close.svg" alt="" onclick="hideMobileMenu()">
+			<nav>
+				<ul>
+					<li><a href="#block-2-mobile" onclick="hideMobileMenu()">Об игре</a></li>
+					<li><a href="#block-4-mobile" onclick="hideMobileMenu()">Поле</a></li>
+					<li><a href="#block-5-mobile" onclick="hideMobileMenu()">Колоды карт</a></li>
+					<li><a href="#block-6-mobile" onclick="hideMobileMenu()">Карьера</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="header-mobile">
+			<ul>
+				<li><img id="logo-mobile" src="./img/mobile/menu.svg" alt="" onclick="showMobileMenu()"></li>
+				<li><a href="/"><img id="header-logo" src="./img/header/logo.svg" alt=""></a></li>
+				<li><a href="#" class="btn btn-small btn-transparent">Скачать</a></li>
+			</ul>
 		</div>
 		<div class="mobile">
-			<div class="header-mobile">
-				<ul>
-					<li><img id="logo-mobile" src="./img/mobile/menu.svg" alt=""></li>
-					<li><a href="/"><img id="header-logo" src="./img/header/logo.svg" alt=""></a></li>
-					<li><a href="#" class="btn btn-small btn-transparent">Скачать</a></li>
-				</ul>
-			</div>
+			
 			<div class="block-1-mobile">
 				<img src="./img/block-1/logo.svg" alt="">
 				<p>Новая эра карточных игр в<br>жанре «защиты башнями»</p>
@@ -373,12 +382,12 @@
 					<a href="" class="btn btn-large btn-transparent">Telegram</a>
 				</div>
 			</div>
-			<div class="block-2-mobile">
+			<div class="block-2-mobile" id="block-2-mobile">
 				<div class="small-sign">
 					<hr>
 					<span>Об ИГРЕ</span>
 				</div>
-				<h1>Башни и карты<br>— ваш путь к<br>победе!</h1>
+				<h1>Башни и карты — ваш путь к победе!</h1>
 				<p>Создайте уникальную колоду карт и сражайтесь 1 на 1, отправляя отряды к замку оппонента и защищаясь от него на своей территории.</p>
 				<img src="./img/block-2/2497.png" alt="">
 			</div>
@@ -582,7 +591,7 @@
 					</div>
 				  </div>
 			</div>
-			<div class="block-5-mobile">
+			<div class="block-5-mobile" id="block-5-mobile">
 				<div class="small-sign">
 					<hr>
 					<span>Колоды карт</span>
@@ -605,7 +614,7 @@
 				</div>
 				<img src="./img/block-5/phone.png" alt="">
 			</div>
-			<div class="block-6-mobile">
+			<div class="block-6-mobile" id="block-6-mobile">
 				<div class="small-sign">
 					<hr>
 					<span>Карьера</span>
