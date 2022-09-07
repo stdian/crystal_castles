@@ -1,4 +1,4 @@
-@import url("//db.onlinewebfonts.com/c/7227d22dc5e8d12716f1f1733f0b364c?family=Favorit+Pro");
+@import "fonts";
 
 // from https://codepen.io/eehayman/pen/qdGZJr
 @mixin transition($time, $property: all, $easing: ease-in) {
@@ -41,7 +41,58 @@ body {
 	}
 }
 
+.notready {
+	display: none;
+}
 
+.preloader {
+	position: absolute;
+	z-index: 200;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+	background: #4A50DC;
+
+	.gg-spinner {
+		transform: scale(var(--ggs,1));
+	}
+	.gg-spinner,
+	.gg-spinner:after,
+	.gg-spinner:before {
+		position: relative;
+		display: block;
+		box-sizing: border-box;
+		width: 5vh;
+		height: 5vh;
+
+		@media screen and (max-width: $mobile){
+			width: 6vh;
+			height: 6vh;
+		}
+	}
+	.gg-spinner:after,
+	.gg-spinner:before {
+		content: "";
+		position: absolute;
+		border-radius: 100px;
+	}
+	.gg-spinner:before {
+		border: 6px solid rgba(255, 255, 255, .3);
+		border-top-color: #FFFFFF;
+		animation: spinner 1s cubic-bezier(.6,0,.4,1) infinite;
+		
+	}
+	.gg-spinner:after {
+		border: 6px solid;
+		opacity: .2;
+	}
+	@keyframes spinner {
+		0% { transform: rotate(0deg); }
+		to { transform: rotate(359deg); }
+	}
+}
 
 @for $i from 1 to ($slide-number + 1) {
 	.background:nth-child(#{$i}) {

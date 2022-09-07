@@ -6,12 +6,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-		<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+		
 		<title>Crystal castles</title>
 	</head>
 	<body>
-		<header>
+		<div class="preloader" style="opacity: 1;">
+			<i class="gg-spinner"></i>
+		</div>
+		<header class="notready">
 			<a href="/">
 				<img src="./img/header/logo.svg" alt="">
 			</a>
@@ -25,7 +27,7 @@
 			</nav>
 			<a href="#" class="btn btn-small btn-transparent">Скачать</a>
 		</header>
-		<div class="container">
+		<div class="container notready">
 			<section class="background">
 				<div class="content-wrapper" id="block-1">
 					<div class="wrapper">
@@ -205,7 +207,7 @@
 				</div>
 			</section>
 		</div>
-		<div id="mobile-menu">
+		<div id="mobile-menu" class="notready">
 			<img src="./img/mobile/close.svg" alt="" onclick="hideMobileMenu()">
 			<nav>
 				<ul>
@@ -224,7 +226,6 @@
 			</ul>
 		</div>
 		<div class="mobile">
-			
 			<div class="block-1-mobile">
 				<img src="./img/block-1/logo.svg" alt="">
 				<p>Новая эра карточных игр в<br>жанре «защиты башнями»</p>
@@ -487,5 +488,7 @@
 				<p class="copy">©2022 Crystal Castles</p>
 			</div>
 		</div>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 	</body>
 </html>

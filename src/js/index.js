@@ -2,6 +2,27 @@ import "../index.html"
 import "../en/index.html"
 import "../scss/index.scss"
 
+window.onload = () => {
+	document.getElementsByClassName("container")[0].classList.remove("notready")
+	document.getElementById("mobile-menu").classList.remove("notready")
+	document.getElementsByClassName("header-mobile")[0].classList.remove("notready")
+	document.getElementsByClassName("mobile")[0].classList.remove("notready")
+	document.getElementsByTagName("header")[0].classList.remove("notready")
+	const fadeTarget = document.getElementsByClassName("preloader")[0]
+	const fadeEffect = setInterval(() => {
+		console.log(fadeTarget.style.opacity)
+		if (fadeTarget.style.opacity > 0) {
+			fadeTarget.style.opacity -= 0.05
+		} else {
+			clearInterval(fadeEffect)
+			fadeTarget.style.display = "none"
+		}
+	}, 50)
+
+	// eslint-disable-next-line no-undef, no-unused-vars
+	const swiper = new Swiper(".block-4-mobile", {})
+}
+
 let ticking = false
 const isFirefox = /Firefox/i.test(navigator.userAgent)
 const scrollSensitivitySetting = 30
@@ -156,9 +177,6 @@ window.scrollToSlide = (slide) => {
 		slideDurationTimeout(slideDurationSetting)
 	}
 }
-
-// eslint-disable-next-line no-undef, no-unused-vars
-const swiper = new Swiper(".block-4-mobile", {})
 
 window.showMobileMenu = () => {
 	const content = document.querySelector(".mobile")

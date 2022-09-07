@@ -1,23 +1,5 @@
-// @font-face {
-// 	font-family: "Favorit Pro";
-// 	src: local("Favorit Pro Bold"), local("FavoritPro-Regular"),
-// 		url("../fonts/FavoritPro/FavoritPro-Regular.woff2") format("woff2");
-// 	font-weight: normal;
-// 	font-style: normal;
-// }
-
-// @font-face {
-// 	font-family: "Favorit Pro";
-// 	src: local("Favorit Pro Italic"), local("FavoritPro-Italic"),
-// 		url("../fonts/FavoritPro/FavoritPro-Italic.woff2") format("woff2");
-// 	font-weight: normal;
-// 	font-style: italic;
-// }
-
-// @font-face {
-// 	font-family: "Favorit Pro";
-// 	src: local("Favorit Pro Bold"), local("FavoritPro-Bold"),
-// 		url("../fonts/FavoritPro/FavoritPro-Bold.woff2") format("woff2");
-// 	font-weight: bold;
-// 	font-style: normal;
-// }
+@font-face {font-family: "Favorit Pro";
+	src: url("../fonts/7227d22dc5e8d12716f1f1733f0b364c.woff2") format("woff2"), /* chrome firefox */
+		url("../fonts/7227d22dc5e8d12716f1f1733f0b364c.woff") format("woff"), /* chrome firefox */
+		url("../fonts/7227d22dc5e8d12716f1f1733f0b364c.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+}
