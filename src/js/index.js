@@ -19,13 +19,30 @@ window.onload = () => {
 	}, 50)
 
 	// eslint-disable-next-line no-undef, no-unused-vars
-	const swiper = new Swiper(".block-4-mobile", {})
+	const swiper = new Swiper(".block-4-mobile", {
+		effect: "fade",
+		fadeEffect: {
+			crossFade: true,
+		  },
+		  centeredSlides: true,
+		shortSwipes: true,
+		speed: 600,
+		virtualTranslate: true,
+		followFinger: false,
+		autoHeight: false,
+		spaceBetween: 30,
+	})
+	// document.body.onscroll = (e) => {
+	// 	console.log(e);
+	// }
+	// const scroller = scrollama()
 }
 
+const isFirefox = /Firefox/i.test(navigator.userAgent)
 let ticking = false
 const scrollSensitivitySetting = 30
 const slideDurationSetting = 600
-const mousewheelEvent = "wheel"
+const mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel"
 let currentSlideNumber = 0
 // eslint-disable-next-line no-undef
 const totalSlideNumber = $(".background").length

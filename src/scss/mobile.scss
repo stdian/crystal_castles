@@ -32,9 +32,64 @@
 	}
 }
 
+body {
+	@media screen and (max-width: $mobile) {
+		overflow-x: hidden !important;
+	}
+}
+
+//from https://codepen.io/scottkellum/pen/DeaVmP
+$parallax-perspective : 1 !default;
+$parallax-element     : "body" !default;
+$parallax-ios         : true !default;
+
+@mixin parallax-init(
+	$perspective  : $parallax-perspective,
+	$element      : $parallax-element,
+	$parallax-ios : $parallax-ios
+) {
+	@if $element == "body" {
+		html, body {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+	}
+	#{$element} {
+		@media screen and (max-width: $mobile){
+			overflow: auto;
+			perspective: $perspective * 1px;
+			transform-style: preserve-3d;
+			@if $parallax-ios == false {
+				-webkit-overflow-scrolling: touch;
+			}
+			&, * {
+				transform-style: preserve-3d;
+			}
+		}
+	}
+}
+
+@mixin parallax(
+	$distance    : 0,
+	$perspective : $parallax-perspective
+) {
+  	transform:
+    	translateZ($distance * $perspective * 1px)
+    	scale(abs($distance - 1));
+	z-index: $distance * 100;
+}
+
+$parallax-content: .1;
+$parallax-block: -0.05;
+$k: 1;
+
+@include parallax-init;
 .header-mobile {
-	position: fixed;
-	z-index: 100;
+	// position: fixed;
+	z-index: 9999;
 	display: none;
 	align-items: center;
 	justify-content: space-between;
@@ -73,15 +128,23 @@
 	}
 }
 
+.small-sign {
+	@media screen and (max-width: $mobile) {
+		@include parallax($parallax-content / 2);
+	}
+}
+
 .mobile {
 	display: none;
-	padding-top: 11vh;
+	// padding-top: 11vh;
+	
 
 	@media screen and (max-width: $mobile) {
 		display: block;
 	}
 
 	.block-1-mobile {
+		@include parallax(-0.22 * $k);
 		height: 111vh;
 		border-radius: 16px;
 		background-color: #4A50DC;
@@ -91,6 +154,7 @@
 		background-repeat: no-repeat;
 
 		img {
+			@include parallax($parallax-content);
 			display: block;
 			width: calc(100% - 8.6vw);
 			margin: 0 auto;
@@ -99,6 +163,7 @@
 		}
 
 		p {
+			@include parallax($parallax-content);
 			padding-bottom: 9.6vh;
 			color: #FFFFFF;
 			font-weight: 350;
@@ -109,6 +174,7 @@
 		}
 
 		.buttons {
+			@include parallax($parallax-content);
 			display: flex;
 			justify-content: space-between;
 			padding: 0 4.27vw;
@@ -120,13 +186,17 @@
 		}
 	}
 
+	
+
 	.block-2-mobile {
-		min-height: 114vh;
+		@include parallax(-0.20 * $k);
+		min-height: 116vh;
 		padding: 3.6vh 4.26vw;
 		border-radius: 16px;
 		background: linear-gradient(241.99deg, #48637F 0%, #465F7B 66.34%);
 
 		h1 {
+			@include parallax($parallax-content);
 			padding-top: 3.7vh;
 			padding-bottom: 2.6vh;
 			font-style: normal;
@@ -138,6 +208,7 @@
 		}
 
 		p {
+			@include parallax($parallax-content);
 			padding-bottom: 4.9vh;
 			font-style: normal;
 			font-weight: 350;
@@ -148,49 +219,75 @@
 		}
 
 		img {
+			@include parallax($parallax-content);
 			display: block;
 			width: 100%;
 			margin: 0 auto;
 		}
 	}
 
-	.block-3-mobile-text {
-		padding: 3.6vh 4.26vw;
-		border-radius: 16px;
-		background-color: #FEC6FF;
-		
-		h1 {
-			padding-bottom: 1.2vh;
-			font-style: normal;
-			font-weight: 350;
-			font-size: 6vh;
-			line-height: 120%;
-			letter-spacing: -.02em;
-			color: #000000;
-		}
-
-		p {
-			padding-bottom: 2.4vh;
-			font-style: normal;
-			font-weight: 350;
-			font-size: 3vh;
-			line-height: 120%;
-			letter-spacing: -.02em;
-			color: #000000;
-		}
-	}
-
-	.block-3-mobile-img {
-		img {
-			width: 100vw;
+	.block-3 {
+		.block-3-mobile-text {
+			padding: 3.6vh 4.26vw;
 			border-radius: 16px;
+			background-color: #FEC6FF;
+			
+			h1 {
+				@include parallax($parallax-content);
+				padding-bottom: 1.2vh;
+				font-style: normal;
+				font-weight: 350;
+				font-size: 6vh;
+				line-height: 120%;
+				letter-spacing: -.02em;
+				color: #000000;
+			}
+	
+			p {
+				@include parallax($parallax-content);
+				padding-bottom: 2.4vh;
+				font-style: normal;
+				font-weight: 350;
+				font-size: 3vh;
+				line-height: 120%;
+				letter-spacing: -.02em;
+				color: #000000;
+			}
+		}
+	
+		.block-3-mobile-img {
+			// opacity: 0;
+			img {
+				width: 100vw;
+				border-radius: 16px;
+			}
+		}
+	
+		.block-3-1-mobile {
+			@include parallax(-0.18  * $k);
+		}
+	
+		.block-3-2-mobile {
+			@include parallax(-0.14  * $k);
+		}
+	
+		.block-3-3-mobile {
+			@include parallax(-0.12  * $k);
+		}
+	
+		.block-3-4-mobile {
+			@include parallax(-0.10  * $k);
 		}
 	}
+
+	
 
 	.block-4-mobile {
+		@include parallax(-0.08 * $k);
 		width: 100%;
 		height: 90.70vh;
 		border-radius: 16px;
+		z-index: 0 !important;
 
 		.swiper-wrapper {
 			.swiper-slide {
@@ -202,11 +299,10 @@
 
 				.dots-container {
 					position: absolute;
-					bottom: 4.8vh;
+					// bottom: 4.8vh;
 					width: calc(100% - 8.52vw);
 
 					.dots {
-						
 						display: flex;
 						flex-direction: column;
 						row-gap: 2vh;
@@ -215,6 +311,7 @@
 						transform: rotate(-90deg);
 			
 						.dot {
+							@include parallax($parallax-content);
 							display: flex;
 							align-items: center;
 							column-gap: .6vh;
@@ -252,32 +349,57 @@
 
 				&:first-child {
 					background-image: url("../img/block-4/m1.png");
+
+					.dots-container {
+						bottom: 4.8vh;
+					}
 				}
 
 				&:nth-child(2) {
 					background-image: url("../img/block-4/m2.png");
+
+					.dots-container {
+						bottom: 5.4vh;
+					}
 				}
 
 				&:nth-child(3) {
 					background-image: url("../img/block-4/m3.png");
+
+					.dots-container {
+						bottom: 5.4vh;
+					}
 				}
 
 				&:nth-child(4) {
 					background-image: url("../img/block-4/m4.png");
+
+					.dots-container {
+						bottom: 8vh;
+					}
 				}
 
 				&:nth-child(5) {
 					background-image: url("../img/block-4/m5.png");
+
+					.dots-container {
+						bottom: 11.75vh;
+					}
 				}
 
 				&:nth-child(6) {
 					background-image: url("../img/block-4/m6.png");
+
+					.dots-container {
+						bottom: 11.45vh;
+					}
 				}
 			}
 		}
 	}
 
 	.block-5-mobile {
+		@include parallax(-0.06 * $k);
 		width: 100%;
 		padding: 3.6vh 4.26vw 0;
 		border-radius: 16px;
@@ -289,6 +411,7 @@
 		background-repeat: no-repeat;
 
 		h1 {
+			@include parallax($parallax-content);
 			padding-top: 3.7vh;
 			padding-bottom: 2.6vh;
 			font-style: normal;
@@ -300,6 +423,7 @@
 		}
 
 		p {
+			@include parallax($parallax-content);
 			padding-bottom: 4.9vh;
 			font-style: normal;
 			font-weight: 350;
@@ -312,6 +436,7 @@
 		.blocks {
 			display: flex;
 			column-gap: 1.2vh;
+			@include parallax($parallax-content);
 
 			.block {
 				display: flex;
@@ -347,6 +472,7 @@
 		}
 
 		img {
+			@include parallax($parallax-content);
 			display: block;
 			object-fit: cover;
 			object-position: 0 6.6vh;
@@ -354,15 +480,16 @@
 			margin: 0 auto;
 			margin-top: 9.6vh;
 			filter: drop-shadow(10.7589px 35.3508px 58px #000000);
-			
 		}
 	}
 
 	.block-6-mobile {
+		@include parallax(-0.02 * $k);
 		width: 100%;
 		min-height: 181vh;
 		padding: 3.6vh 4.26vw 0;
 		border-radius: 16px;
+		// z-index: 9000;
 
 		background-color: #242629;
 		background-image: url("../img/block-6/circle.svg"), url("../img/block-6/level.svg"), url("../img/block-6/point.svg"), url("../img/block-6/cards.png");
@@ -371,6 +498,7 @@
 		background-repeat: no-repeat;
 
 		h1 {
+			@include parallax($parallax-content);
 			padding-top: 3.7vh;
 			padding-bottom: 4.7vh;
 			font-style: normal;
@@ -382,26 +510,30 @@
 		}
 
 		img {
+			@include parallax($parallax-content);
 			width: 100%;
 		}
 	}
 
 	.block-email-mobile {
+		@include parallax(-0.01 * $k);
 		padding: 3.6vh 4.26vw;
 		border-radius: 16px;
 		background: #FEC6FF;
 
 		h1 {
+			@include parallax($parallax-content);
 			padding-bottom: 2.4vh;
 			color: #000000;
 			font-style: normal;
 			font-weight: 350;
-			font-size: 7.2vh;
+			font-size: 6.2vh;
 			line-height: 100%;
 			letter-spacing: -.02em;
 		}
 
 		h2 {
+			@include parallax($parallax-content);
 			padding-bottom: 4.8vh;
 			color: #000000;
 			font-style: normal;
@@ -412,6 +544,7 @@
 		}
 
 		form {
+			@include parallax($parallax-content);
 			display: flex;
 			flex-direction: column;
 			width: 91.4vw;
@@ -444,13 +577,13 @@
 		}
 
 		p {
+			// @include parallax(.05);
 			color: #000000;
 			font-style: normal;
 			font-weight: 350;
 			font-size: 2.4vh;
 			line-height: 120%;
 			letter-spacing: -.02em;
-
 		}
 	}
 
@@ -459,6 +592,7 @@
 		text-align: center;
 
 		.copy {
+			@include parallax($parallax-content);
 			padding-top: 2.4vh;
 			color: #959595;
 			font-style: normal;
@@ -468,6 +602,7 @@
 		}
 
 		.policy {
+			@include parallax($parallax-content);
 			color: #959595;
 			font-style: normal;
 			font-weight: 700;

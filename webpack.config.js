@@ -2,7 +2,6 @@ const path = require("path")
 const HTMLWebpackPlugin = require("html-webpack-plugin")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const CopyWebpackPlugin = require("copy-webpack-plugin")
 const MinimizerCssWebpackPlugin = require("css-minimizer-webpack-plugin")
 const TerserWebpackPlugin = require("terser-webpack-plugin")
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin")
@@ -12,7 +11,7 @@ const isProd = !isDev
 
 const filename = (ext) => {
 	if (isDev) {
-		if (ext === "[ext]") return `[name].${ext}`
+		if (ext === "[ext]") return `[name]${ext}`
 		return `[name].${ext}`
 	}
 	if (ext === "[ext]") return `[name].[contenthash]${ext}`
@@ -47,7 +46,7 @@ const plugins = () => {
 			},
 		}),
 		new HTMLWebpackPlugin({
-			template: path.resolve(__dirname, "src/en/index.html"),
+			template: path.resolve(__dirname, "src/index_en.html"),
 			filename: "./en/index.html",
 			chunks: ["index"],
 			minify: {
@@ -70,7 +69,7 @@ const plugins = () => {
 						plugins: [
 							["gifsicle", { interlaced: true }],
 							["jpegtran", { progressive: true }],
-							["optipng", { optimizationLevel: 5 }],
+							// ["optipng", { optimizationLevel: 5 }],
 							[
 								"svgo",
 								{
@@ -85,7 +84,7 @@ const plugins = () => {
 								},
 							],
 						],
-					}
+					},
 				},
 			}),
 		)

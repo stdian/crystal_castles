@@ -3,10 +3,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<!-- <script src="https://unpkg.com/scrollama"></script> -->
+		
 		<title>Crystal castles</title>
 	</head>
 	<body>
@@ -19,20 +19,20 @@
 			</a>
 			<nav>
 				<ul>
-					<li><a href="#block-2" onclick="scrollToSlide(1)">Об игре</a></li>
-					<li><a href="#block-4-1" onclick="scrollToSlide(3)">Поле</a></li>
-					<li><a href="#block-5" onclick="scrollToSlide(4)">Колоды карт</a></li>
-					<li><a href="#block-6" onclick="scrollToSlide(5)">Карьера</a></li>
+					<li><a href="#block-2" onclick="scrollToSlide(1)">About</a></li>
+					<li><a href="#block-4-1" onclick="scrollToSlide(3)">Field</a></li>
+					<li><a href="#block-5" onclick="scrollToSlide(4)">Decks of cards</a></li>
+					<li><a href="#block-6" onclick="scrollToSlide(5)">Career</a></li>
 				</ul>
 			</nav>
-			<a href="#" class="btn btn-small btn-transparent" style="opacity: 0;">Скачать</a>
+			<a href="#" class="btn btn-small btn-transparent">Download</a>
 		</header>
 		<div class="container notready">
 			<section class="background">
 				<div class="content-wrapper" id="block-1">
 					<div class="wrapper">
 						<img src="./img/block-1/logo.svg" alt="">
-						<p>Новая эра карточных игр в жанре<br>«защиты башнями»</p>
+						<p>A new era of card games in the genre of<br>"tower defense"</p>
 						<div class="buttons">
 							<a href="" class="btn btn-large btn-white">Discord</a>
 							<a href="" class="btn btn-large btn-transparent">Telegram</a>
@@ -44,12 +44,12 @@
 				<div class="content-wrapper" id="block-2">
 					<div class="small-sign">
 						<hr>
-						<span>Об ИГРЕ</span>
+						<span>About</span>
 					</div>
-					<h1>Башни и карты<br>— ваш путь к<br>победе!</h1>
-					<p>Создайте уникальную колоду карт и<br>сражайтесь 1 на 1, отправляя отряды<br>к замку оппонента и защищаясь от<br>него на своей территории.</p>
+					<h1>Towers and maps<br>— your way to<br>victory!</h1>
+					<p>Create a unique deck of cards and<br>fight 1 vs 1, sending units to your<br>opponent's castle and defending<br>against him in your territory.</p>
 					<div class="point">
-						<span>Ваша сторона</span>
+						<span>Your side</span>
 						<div class="line">
 							<hr><div class="circle"></div>
 						</div>
@@ -61,14 +61,14 @@
 					<div class="wrapper">
 						<div class="left">
 							<div class="top">
-								<h1>Защищайтесь</h1>
-								<p>Стройте кристаллические башни, чтобы защитить свой замок от отряда противника.</p>
-								<p>Побеждает тот, чьи отряды дойдут и уничтожат вражеский замок.</p>
+								<h1>Defend</h1>
+								<p>Build crystal towers to protect your castle from enemy units.</p>
+								<p>The winner is the one whose units will reach and destroy the enemy castle.</p>
 							</div>
 							<div class="bottom">
-								<h1>Нападайте</h1>
-								<p>Используйте вашу уникальную колоду карт и способности, чтобы уничтожить врага и победить бой!</p>
-								<p>Чем больше вы отправляете отрядов — тем больше у вас прибавка к цикличному доходу.</p>
+								<h1>Attack</h1>
+								<p>Use your unique deck of cards and abilities to destroy the enemy and win the battle!</p>
+								<p>The more units you send, the greater your increase in cyclic income.</p>
 							</div>
 						</div>
 						<div class="img"></div>
@@ -80,38 +80,38 @@
 					<div class="wrapper">
 						<div class="small-sign">
 							<hr>
-							<span>Поле</span>
+							<span>Field</span>
 						</div>
 						<div class="dots">
 							<div class="dot active">
 								<div class="circle"></div>
 								<hr>
-								<span>Поле</span>
+								<span>Field</span>
 							</div>
 							<div class="dot">
 								<div class="circle"></div>
 								<hr>
-								<span>Замок</span>
+								<span>Castle</span>
 							</div>
 							<div class="dot">
 								<div class="circle"></div>
 								<hr>
-								<span>Башни</span>
+								<span>Towers</span>
 							</div>
 							<div class="dot">
 								<div class="circle"></div>
 								<hr>
-								<span>Путь отряда</span>
+								<span>Way of the squad</span>
 							</div>
 							<div class="dot">
 								<div class="circle"></div>
 								<hr>
-								<span>Точки выхода войск</span>
+								<span>Troop exit points</span>
 							</div>
 							<div class="dot">
 								<div class="circle"></div>
 								<hr>
-								<span>Сторона оппонента</span>
+								<span>Opponent's side</span>
 							</div>
 						</div>
 					</div>
@@ -122,25 +122,25 @@
 					<div class="wrapper">
 						<div class="small-sign">
 							<hr>
-							<span>Колоды карт</span>
+							<span>Decks of cards</span>
 						</div>
 						<div class="container">
 							<div class="left">
-								<h1>Собирайте колоду и<br>отправляйтесь в бой!</h1>
-								<p>Сражаясь вы будете получать награды и<br>уникальные карты разной редкости. Используйте<br>их, чтобы стать сильнее в новом сражении!</p>
+								<h1>Gather your deck<br>and go to battle!</h1>
+								<p>As you fight you'll receive rewards and<br>unique cards of varying rarity. Use them<br>to become stronger in a new battle!</p>
 
 								<div class="blocks">
 									<div class="block">
 										<span class="large">10</span>
-										<span class="small">Карт в бою</span>
+										<span class="small">Cards in battle</span>
 									</div>
 									<div class="block">
 										<span class="large">5</span>
-										<span class="small">Башен</span>
+										<span class="small">Towers</span>
 									</div>
 									<div class="block">
 										<span class="large">5</span>
-										<span class="small">Отрядов</span>
+										<span class="small">Squads</span>
 									</div>
 								</div>
 							</div>
@@ -154,11 +154,11 @@
 					<div class="wrapper">
 						<div class="small-sign">
 							<hr>
-							<span>Карьера</span>
+							<span>Career</span>
 						</div>
 						<div class="container">
 							<div class="left">
-								<h1>Побеждайте, чтобы<br>получать больше<br>наград.</h1>
+								<h1>Win to receive<br>more rewards.</h1>
 							</div>
 							<img src="./img/block-6/info.svg" alt="">
 						</div>
@@ -169,20 +169,20 @@
 				<div class="content-wrapper">
 					<div class="email">
 						<div class="left">
-							<h1>Узнаете первым,<br>когда игра будет<br>доступной для<br>скачивания.</h1>
+							<h1>You'll be the first<br>to know when the<br>game will beavailable<br>for download.</h1>
 						</div>
 						<div class="right">
-							<h2>Подпишитесь на нашу Email рассылку, чтобы не пропустить оповещение о выходе нашей игры. Спамить не будем :)</h2>
+							<h2>Sign up for our Email newsletter, so you won't miss an alert when our game is released.</h2>
 							<form action="get">
 								<input type="email" name="email" id="">
 								<button type="submit" class="btn btn-transparent btn-large">Подписаться</button>
 							</form>
-							<p>Нажав кнопку «подписаться», вы соглашаетесь на обработку персональных данных.</p>
+							<p>By clicking the "subscribe" button, you agree to the processing of personal data.</p>
 						</div>
 					</div>
 					<div class="copyright">
 						<span class="copy">©2022 Crystal Castles</span>
-						<a href="#" class="policy">Политика обработки персональных данных</a>
+						<a href="#" class="policy">Personal data processing policy</a>
 					</div>
 				</div>
 			</section>
@@ -199,10 +199,10 @@
 			<img src="./img/mobile/close.svg" alt="" onclick="hideMobileMenu()">
 			<nav>
 				<ul>
-					<li><a href="#block-2-mobile" onclick="hideMobileMenu()">Об игре</a></li>
-					<li><a href="#block-4-mobile" onclick="hideMobileMenu()">Поле</a></li>
-					<li><a href="#block-5-mobile" onclick="hideMobileMenu()">Колоды карт</a></li>
-					<li><a href="#block-6-mobile" onclick="hideMobileMenu()">Карьера</a></li>
+					<li><a href="#block-2-mobile" onclick="hideMobileMenu()">About</a></li>
+					<li><a href="#block-4-mobile" onclick="hideMobileMenu()">Field</a></li>
+					<li><a href="#block-5-mobile" onclick="hideMobileMenu()">Decks of cards</a></li>
+					<li><a href="#block-6-mobile" onclick="hideMobileMenu()">Career</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -210,13 +210,13 @@
 			<ul>
 				<li><img id="logo-mobile" src="./img/mobile/menu.svg" alt="" onclick="showMobileMenu()"></li>
 				<li><a href="/"><img id="header-logo" src="./img/header/logo.svg" alt=""></a></li>
-				<li><a href="#" class="btn btn-small btn-transparent" style="opacity: 0;">Скачать</a></li>
+				<li><a href="#" class="btn btn-small btn-transparent">Download</a></li>
 			</ul>
 		</div>
 		<div class="mobile">
 			<div class="block-1-mobile">
 				<img src="./img/block-1/logo.svg" alt="">
-				<p>Новая эра карточных игр в<br>жанре «защиты башнями»</p>
+				<p>A new era of card games in the genre of<br>"tower defense"</p>
 				<div class="buttons">
 					<a href="" class="btn btn-large btn-white">Discord</a>
 					<a href="" class="btn btn-large btn-transparent">Telegram</a>
@@ -225,43 +225,41 @@
 			<div class="block-2-mobile" id="block-2-mobile">
 				<div class="small-sign">
 					<hr>
-					<span>Об ИГРЕ</span>
+					<span>About</span>
 				</div>
-				<h1>Башни и карты — ваш путь к победе!</h1>
-				<p>Создайте уникальную колоду карт и сражайтесь 1 на 1, отправляя отряды к замку оппонента и защищаясь от него на своей территории.</p>
+				<h1>Towers and maps — your way to victory!</h1>
+				<p>Create a unique deck of cards and fight 1 vs 1, sending units to your opponent's castle and defending against him in your territory.</p>
 				<img src="./img/block-2/2497.png" alt="">
 			</div>
-			<div class="block-3">
-				<div class="block-3-1-mobile block-3-mobile-text">
-					<h1>Защищайтесь</h1>
-					<p>Стройте кристаллические башни, чтобы защитить свой замок от отряда противника.</p>
-					<p>Побеждает тот, чьи отряды дойдут и уничтожат вражеский замок.</p>
-				</div>
-				<div class="block-3-2-mobile block-3-mobile-img">
-					<img src="./img/block-3/mobile1.png" alt="">
-				</div>
-				<div class="block-3-3-mobile block-3-mobile-text">
-					<h1>Нападайте</h1>
-					<p>Используйте вашу уникальную колоду карт и способности, чтобы уничтожить врага и победить бой!</p>
-					<p>Чем больше вы отправляете отрядов — тем больше у вас прибавка к цикличному доходу.</p>
-				</div>
-				<div class="block-3-4-mobile block-3-mobile-img">
-					<img src="./img/block-3/mobile2.png" alt="">
-				</div>
+			<div class="block-3-1-mobile block-3-mobile-text">
+				<h1>Defend</h1>
+				<p>Build crystal towers to protect your castle from enemy units.</p>
+				<p>The winner is the one whose units will reach and destroy the enemy castle.</p>
+			</div>
+			<div class="block-3-2-mobile block-3-mobile-img">
+				<img src="./img/block-3/mobile1.png" alt="">
+			</div>
+			<div class="block-3-3-mobile block-3-mobile-text">
+				<h1>Attack</h1>
+				<p>Use your unique deck of cards and abilities to destroy the enemy and win the battle!</p>
+				<p>The more units you send, the greater your increase in cyclic income.</p>
+			</div>
+			<div class="block-3-4-mobile block-3-mobile-img">
+				<img src="./img/block-3/mobile2.png" alt="">
 			</div>
 			<div class="block-4-mobile swiper" id="block-4-mobile">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
 						<div class="small-sign">
 							<hr>
-							<span>Поле</span>
+							<span>Field</span>
 						</div>
 						<div class="dots-container">
 							<div class="dots">
 								<div class="dot">
 									<div class="circle active"></div>
 									<hr>
-									<span>Поле</span>
+									<span>Field</span>
 								</div>
 								<div class="dot">
 									<div class="circle"></div>
@@ -284,7 +282,7 @@
 					<div class="swiper-slide">
 						<div class="small-sign">
 							<hr>
-							<span>Поле</span>
+							<span>Field</span>
 						</div>
 						<div class="dots-container">
 							<div class="dots">
@@ -294,7 +292,7 @@
 								<div class="dot">
 									<div class="circle active"></div>
 									<hr>
-									<span>Замок</span>
+									<span>Castle</span>
 								</div>
 								<div class="dot">
 									<div class="circle"></div>
@@ -314,7 +312,7 @@
 					<div class="swiper-slide">
 						<div class="small-sign">
 							<hr>
-							<span>Поле</span>
+							<span>Field</span>
 						</div>
 						<div class="dots-container">
 							<div class="dots">
@@ -327,7 +325,7 @@
 								<div class="dot">
 									<div class="circle active"></div>
 									<hr>
-									<span>Башни</span>
+									<span>Towers</span>
 								</div>
 								<div class="dot">
 									<div class="circle"></div>
@@ -344,7 +342,7 @@
 					<div class="swiper-slide">
 						<div class="small-sign">
 							<hr>
-							<span>Поле</span>
+							<span>Field</span>
 						</div>
 						<div class="dots-container">
 							<div class="dots">
@@ -360,7 +358,7 @@
 								<div class="dot">
 									<div class="circle active"></div>
 									<hr>
-									<span>Путь отряда</span>
+									<span>Way of the squad</span>
 								</div>
 								<div class="dot">
 									<div class="circle"></div>
@@ -374,7 +372,7 @@
 					<div class="swiper-slide">
 						<div class="small-sign">
 							<hr>
-							<span>Поле</span>
+							<span>Field</span>
 						</div>
 						<div class="dots-container">
 							<div class="dots">
@@ -393,7 +391,7 @@
 								<div class="dot">
 									<div class="circle active"></div>
 									<hr>
-									<span>Точки выхода войск</span>
+									<span>Troop exit points</span>
 								</div>
 								<div class="dot">
 									<div class="circle"></div>
@@ -404,7 +402,7 @@
 					<div class="swiper-slide">
 						<div class="small-sign">
 							<hr>
-							<span>Поле</span>
+							<span>Field</span>
 						</div>
 						<div class="dots-container">
 							<div class="dots">
@@ -426,7 +424,7 @@
 								<div class="dot">
 									<div class="circle active"></div>
 									<hr>
-									<span>Сторона оппонента</span>
+									<span>Opponent's side</span>
 								</div>
 							</div>
 						</div>	
@@ -436,22 +434,22 @@
 			<div class="block-5-mobile" id="block-5-mobile">
 				<div class="small-sign">
 					<hr>
-					<span>Колоды карт</span>
+					<span>Decks of cards</span>
 				</div>
-				<h1>Собирайте колоду и отправляйтесь в бой!</h1>
-				<p>Сражаясь вы будете получать награды и уникальные карты разной редкости. Используйте их, чтобы стать сильнее в новом сражении!</p>
+				<h1>Gather your deck and go to battle!</h1>
+				<p>As you fight you'll receive rewards and unique cards of varying rarity. Use them to become stronger in a new battle!</p>
 				<div class="blocks">
 					<div class="block">
 						<span class="large">10</span>
-						<span class="small">Карт в бою</span>
+						<span class="small">Cards in battle</span>
 					</div>
 					<div class="block">
 						<span class="large">5</span>
-						<span class="small">Башен</span>
+						<span class="small">Towers</span>
 					</div>
 					<div class="block">
 						<span class="large">5</span>
-						<span class="small">Отрядов</span>
+						<span class="small">Squads</span>
 					</div>
 				</div>
 				<img src="./img/block-5/phone.png" alt="">
@@ -459,26 +457,26 @@
 			<div class="block-6-mobile" id="block-6-mobile">
 				<div class="small-sign">
 					<hr>
-					<span>Карьера</span>
+					<span>Career</span>
 				</div>
-				<h1>Побеждайте, чтобы получать больше наград.</h1>
+				<h1>Win to receive more rewards.</h1>
 				<img src="./img/block-6/info-mobile.svg" alt="">
 			</div>
 			<div class="block-email-mobile">
-				<h1>Узнаете первым, когда игра будет доступной для скачивания.</h1>
-				<h2>Подпишитесь на нашу Email рассылку, чтобы не пропустить оповещение о выходе нашей игры. Спамить не будем :)</h2>
+				<h1>You'll be the first to know when the game will beavailable for download.</h1>
+				<h2>Sign up for our Email newsletter, so you won't miss an alert when our game is released.</h2>
 				<form action="get">
 					<input type="email" name="email" id="">
 					<button type="submit" class="btn btn-transparent btn-large">Подписаться</button>
 				</form>
-				<p>Нажав кнопку «подписаться», вы соглашаетесь на обработку персональных данных.</p>
+				<p>By clicking the "subscribe" button, you agree to the processing of personal data.</p>
 			</div>
 			<div class="block-copyright-mobile">
-				<a href="#" class="policy">Политика обработки персональных данных</a>
+				<a href="#" class="policy">Personal data processing policy</a>
 				<p class="copy">©2022 Crystal Castles</p>
 			</div>
 		</div>
-		<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+		<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 	</body>
 </html>
