@@ -2,6 +2,73 @@ import "../index.html"
 import "../en/index.html"
 import "../scss/index.scss"
 
+// let xDown = null
+// let yDown = null
+
+// const vh = (v) => {
+// const h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+// return (v * h) / 100
+// }
+
+// const vw = (v) => {
+// const w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+// return (v * w) / 100
+// }
+
+// const turnOffScroll = () => {
+// document.body.classList.add("no-scroll")
+// }
+
+// const turnOnScroll = () => {
+// document.body.classList.remove("no-scroll")
+// }
+
+// const handleScroll = (e) => {
+// if (document.body.scrollTop > vh(238)) {
+//     // turnOffScroll()
+// }
+// }
+
+// function getTouches(evt) {
+//     return evt.touches || evt.originalEvent.touches
+// }
+
+// function handleTouchStart(evt) {
+//     const firstTouch = getTouches(evt)[0]
+//     xDown = firstTouch.clientX
+//     yDown = firstTouch.clientY
+// }
+
+// function handleTouchMove(evt) {
+// if (!xDown || !yDown) {
+//     return
+// }
+
+// const xUp = evt.touches[0].clientX
+// const yUp = evt.touches[0].clientY
+
+// const xDiff = xDown - xUp
+// const yDiff = yDown - yUp
+
+// if (Math.abs(xDiff) > Math.abs(yDiff)) {
+//     if (xDiff > 0) {
+//         /* right swipe */
+//     } else {
+//      /* left swipe */
+//     }
+// } else {
+//     // eslint-disable-next-line no-lonely-if
+//     if (yDiff > 0) {
+//         console.log("down")
+//     } else {
+//         turnOnScroll()
+//     }
+// }
+
+// xDown = null
+// yDown = null
+// }
+
 window.onload = () => {
 	document.getElementsByClassName("container")[0].classList.remove("notready")
 	document.getElementById("mobile-menu").classList.remove("notready")
@@ -23,8 +90,8 @@ window.onload = () => {
 		effect: "fade",
 		fadeEffect: {
 			crossFade: true,
-		  },
-		  centeredSlides: true,
+		},
+		centeredSlides: true,
 		shortSwipes: true,
 		speed: 600,
 		virtualTranslate: true,
@@ -33,16 +100,22 @@ window.onload = () => {
 		spaceBetween: 30,
 	})
 	// document.body.onscroll = (e) => {
-	// 	console.log(e);
+	// console.log(e);
 	// }
 	// const scroller = scrollama()
+
+	// document.body.addEventListener("scroll", handleScroll)
+	// document.addEventListener("touchstart", handleTouchStart, false)
+	// document.addEventListener("touchmove", handleTouchMove, false)
 }
 
 const isFirefox = /Firefox/i.test(navigator.userAgent)
+const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
 let ticking = false
-const scrollSensitivitySetting = 30
+const scrollSensitivitySetting = isSafari ? 30 : 30
 const slideDurationSetting = 600
-const mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel"
+// eslint-disable-next-line no-nested-ternary
+const mousewheelEvent = isFirefox ? "DOMMouseScroll" : (isSafari ? "mousewheel" : "wheel")
 let currentSlideNumber = 0
 // eslint-disable-next-line no-undef
 const totalSlideNumber = $(".background").length
@@ -81,6 +154,7 @@ const dogChange = (state) => {
 		block.getElementsByClassName("bottom")[0].classList.add("changed")
 		block.getElementsByClassName("img")[0].classList.add("changed")
 	}
+	slideDurationTimeout(slideDurationSetting)
 }
 
 const block4change = (direction, e) => {
@@ -96,16 +170,24 @@ const block4change = (direction, e) => {
 		if (direction === 0) block4state -= 1
 		if (direction === 1) block4state += 1
 
-		let bgIndex = 0
-		for (let i = 0; i < e.path.length; i += 1) {
-			if (e.path[i].classList.contains("background")) {
-				bgIndex = i
-				break
+		let bg
+
+		if (isSafari) {
+			if (e.target.id === "block-4-1") {
+				bg = e.target.offsetParent
+			} else if (e.target.offsetParent.id === "block-4-1") {
+				bg = e.target.offsetParent.offsetParent
+			}
+		} else {
+			for (let i = 0; i < e.path.length; i += 1) {
+				if (e.path[i].classList.contains("background")) {
+					bg = e.path[i]
+					break
+				}
 			}
 		}
 
-		const bg = e.path[bgIndex]
-		const dots = e.path[bgIndex].getElementsByClassName("dots")[0].getElementsByClassName("dot")
+		const dots = bg.getElementsByClassName("dots")[0].getElementsByClassName("dot")
 		for (let i = 0; i < dots.length; i += 1) {
 			dots[i].classList.remove("active")
 		}
@@ -121,20 +203,41 @@ const block4change = (direction, e) => {
 }
 
 function parallaxScroll(evt) {
-	const delta = evt.wheelDelta
+	let delta
+	if (isFirefox) {
+		delta = evt.detail * -120
+	} else {
+		delta = evt.wheelDelta
+	}
+
+	if (Math.abs(delta) < scrollSensitivitySetting) {
+		return
+	}
 
 	let isBlock3 = false
 	let isBlock4 = false
 
-	for (let i = 0; i < evt.path.length; i += 1) {
-		if (evt.path[i].id === "block-3-1") {
-			isBlock3 = true
-			break
-		}
+	if (isSafari) {
+		if (evt.target.offsetParent !== null) {
+			if (evt.target.id === "block-3-1" || evt.target.offsetParent.id === "block-3-1") {
+				isBlock3 = true
+			}
 
-		if (evt.path[i].id === "block-4-1") {
-			isBlock4 = true
-			break
+			if (evt.target.id === "block-4-1" || evt.target.offsetParent.id === "block-4-1") {
+				isBlock4 = true
+			}
+		}
+	} else {
+		for (let i = 0; i < evt.path.length; i += 1) {
+			if (evt.path[i].id === "block-3-1") {
+				isBlock3 = true
+				break
+			}
+
+			if (evt.path[i].id === "block-4-1") {
+				isBlock4 = true
+				break
+			}
 		}
 	}
 
@@ -144,12 +247,18 @@ function parallaxScroll(evt) {
 	}
 
 	if (isBlock3 && evt.wheelDeltaY < 0 && block3state === 0) {
-		dogChange(1)
+		if (!ticking) {
+			ticking = true
+			dogChange(1)
+		}
 		return
 	}
 
 	if (isBlock3 && evt.wheelDeltaY > 0 && block3state === 1) {
-		dogChange(0)
+		if (!ticking) {
+			ticking = true
+			dogChange(0)
+		}
 		return
 	}
 
