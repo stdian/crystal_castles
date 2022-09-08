@@ -35,6 +35,10 @@
 body {
 	@media screen and (max-width: $mobile) {
 		overflow-x: hidden !important;
+
+		&.no-scroll {
+			overflow: hidden;
+		}
 	}
 }
 
@@ -348,7 +352,7 @@ $k: 1;
 				}
 
 				&:first-child {
-					background-image: url("../img/block-4/m1.png");
+					background-image: url("../img/block-4/m1.jpg");
 
 					.dots-container {
 						bottom: 4.8vh;
@@ -356,7 +360,11 @@ $k: 1;
 				}
 
 				&:nth-child(2) {
-					background-image: url("../img/block-4/m2.png");
+					background-image: url("../img/block-4/m2.jpg");
+
+					&.en {
+						background-image: url("../img/block-4/m2en.jpg");
+					}
 
 					.dots-container {
 						bottom: 5.4vh;
@@ -364,7 +372,11 @@ $k: 1;
 				}
 
 				&:nth-child(3) {
-					background-image: url("../img/block-4/m3.png");
+					background-image: url("../img/block-4/m3.jpg");
+					
+					&.en {
+						background-image: url("../img/block-4/m3en.jpg");
+					}
 
 					.dots-container {
 						bottom: 5.4vh;
@@ -372,7 +384,11 @@ $k: 1;
 				}
 
 				&:nth-child(4) {
-					background-image: url("../img/block-4/m4.png");
+					background-image: url("../img/block-4/m4.jpg");
+
+					&.en {
+						background-image: url("../img/block-4/m4en.jpg");
+					}
 
 					.dots-container {
 						bottom: 8vh;
@@ -380,7 +396,11 @@ $k: 1;
 				}
 
 				&:nth-child(5) {
-					background-image: url("../img/block-4/m5.png");
+					background-image: url("../img/block-4/m5.jpg");
+
+					&.en {
+						background-image: url("../img/block-4/m5en.jpg");
+					}
 
 					.dots-container {
 						bottom: 11.75vh;
@@ -388,7 +408,11 @@ $k: 1;
 				}
 
 				&:nth-child(6) {
-					background-image: url("../img/block-4/m6.png");
+					background-image: url("../img/block-4/m6.jpg");
+
+					&.en {
+						background-image: url("../img/block-4/m6en.jpg");
+					}
 
 					.dots-container {
 						bottom: 11.45vh;
