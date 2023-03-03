@@ -2,73 +2,6 @@ import "../index.html"
 import "../en/index.html"
 import "../scss/index.scss"
 
-// let xDown = null
-// let yDown = null
-
-// const vh = (v) => {
-// const h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
-// return (v * h) / 100
-// }
-
-// const vw = (v) => {
-// const w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
-// return (v * w) / 100
-// }
-
-// const turnOffScroll = () => {
-// document.body.classList.add("no-scroll")
-// }
-
-// const turnOnScroll = () => {
-// document.body.classList.remove("no-scroll")
-// }
-
-// const handleScroll = (e) => {
-// if (document.body.scrollTop > vh(238)) {
-//     // turnOffScroll()
-// }
-// }
-
-// function getTouches(evt) {
-//     return evt.touches || evt.originalEvent.touches
-// }
-
-// function handleTouchStart(evt) {
-//     const firstTouch = getTouches(evt)[0]
-//     xDown = firstTouch.clientX
-//     yDown = firstTouch.clientY
-// }
-
-// function handleTouchMove(evt) {
-// if (!xDown || !yDown) {
-//     return
-// }
-
-// const xUp = evt.touches[0].clientX
-// const yUp = evt.touches[0].clientY
-
-// const xDiff = xDown - xUp
-// const yDiff = yDown - yUp
-
-// if (Math.abs(xDiff) > Math.abs(yDiff)) {
-//     if (xDiff > 0) {
-//         /* right swipe */
-//     } else {
-//      /* left swipe */
-//     }
-// } else {
-//     // eslint-disable-next-line no-lonely-if
-//     if (yDiff > 0) {
-//         console.log("down")
-//     } else {
-//         turnOnScroll()
-//     }
-// }
-
-// xDown = null
-// yDown = null
-// }
-
 window.onload = () => {
 	document.getElementsByClassName("container")[0].classList.remove("notready")
 	document.getElementById("mobile-menu").classList.remove("notready")
@@ -99,14 +32,6 @@ window.onload = () => {
 		autoHeight: false,
 		spaceBetween: 30,
 	})
-	// document.body.onscroll = (e) => {
-	// console.log(e);
-	// }
-	// const scroller = scrollama()
-
-	// document.body.addEventListener("scroll", handleScroll)
-	// document.addEventListener("touchstart", handleTouchStart, false)
-	// document.addEventListener("touchmove", handleTouchMove, false)
 }
 
 const isFirefox = /Firefox/i.test(navigator.userAgent)
@@ -228,6 +153,7 @@ function parallaxScroll(evt) {
 			}
 		}
 	} else {
+		// TODO: fix scroll
 		for (let i = 0; i < evt.path.length; i += 1) {
 			if (evt.path[i].id === "block-3-1") {
 				isBlock3 = true
